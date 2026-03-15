@@ -1,22 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { 
-  User, 
-  Search, 
-  LogOut, 
-  Users,
-  Moon,
-  Sun,
-  LogIn,
-  Home,
-  Shield
-} from 'lucide-react';
-import Footer from './Footer';
 
 const Navbar = () => {
-  const { isAuthenticated, user, logout } = useAuth();
-  const navigate = useNavigate();
+  const { isAuthenticated, user } = useAuth();
   const location = useLocation();
   const [darkMode, setDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
