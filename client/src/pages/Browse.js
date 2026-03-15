@@ -5,7 +5,6 @@ import toast from 'react-hot-toast';
 import { Search, MapPin, Clock, Filter, X } from 'lucide-react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useAuth } from '../contexts/AuthContext';
-import api from '../config/api';
 
 const Browse = () => {
   const [users, setUsers] = useState([]);
