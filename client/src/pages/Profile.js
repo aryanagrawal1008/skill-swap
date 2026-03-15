@@ -159,14 +159,14 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-white pt-2 pb-10 px-2">
+    <div className="min-h-screen flex flex-col items-center justify-start bg-white pt-20 md:pt-2 pb-10 px-3 md:px-2">
       {/* Header with greeting and illustration */}
-      <div className="w-full max-w-6xl flex flex-col items-start justify-between mb-6 mt-16">
-        <h1 className="text-4xl font-bold text-brand-plum mb-2">Hi, {user.name}</h1>
-        <p className="text-lg text-brand-orchid">Welcome back! Ready to swap some skills today?</p>
+      <div className="w-full max-w-6xl flex flex-col items-start justify-between mb-4 mt-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-brand-plum mb-1">Hi, {user.name}</h1>
+        <p className="text-base md:text-lg text-brand-orchid">Welcome back! Ready to swap some skills today?</p>
       </div>
       {/* Stat Cards */}
-      <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+      <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6">
         <div className="rounded-2xl shadow bg-[#5D3C64] text-white p-6 flex flex-col items-center">
           <span className="text-2xl font-bold">{user.skillsOffered?.length || 0}</span>
           <span className="mt-2 text-sm font-medium">Skills Offered</span>

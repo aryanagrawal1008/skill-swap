@@ -142,11 +142,11 @@ const Home = () => {
       <div
         ref={heroRef}
         style={{ opacity: 0, transform: 'translateY(40px)' }}
-        className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 max-w-4xl w-full mx-auto"
+        className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 max-w-4xl w-full mx-auto pt-16 md:pt-0"
       >
         {/* Animated Glow */}
         <div className={`absolute left-1/2 top-16 -translate-x-1/2 z-0 pointer-events-none ${glow ? 'animate-glow' : ''}`} style={{width:'520px',height:'220px',filter:'blur(80px)',background:'radial-gradient(circle,#D391B0 0%,#5D3C64 80%,transparent 100%)',opacity:0.35}} />
-        <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 drop-shadow-[0_2px_16px_rgba(44,0,60,0.25)] z-10 tracking-tight max-w-4xl mx-auto">
+        <h1 className="relative text-3xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 md:mb-8 drop-shadow-[0_2px_16px_rgba(44,0,60,0.25)] z-10 tracking-tight max-w-4xl mx-auto">
            Exchange Skills, Learn Together
         </h1>
         {/* Floating constellation */}

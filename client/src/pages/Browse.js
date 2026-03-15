@@ -137,21 +137,21 @@ const Browse = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-white pt-8 px-2 animate-fade-in">
-      <div className="w-full max-w-6xl flex flex-col items-start mb-8 mt-4">
-        <h1 className="text-4xl font-extrabold text-brand-plum mb-2 drop-shadow-lg">Browse Skills</h1>
-        <p className="text-lg text-brand-orchid">Find people with the skills you want to learn</p>
+    <div className="min-h-screen flex flex-col items-center bg-white pt-20 md:pt-8 px-3 md:px-2 animate-fade-in">
+      <div className="w-full max-w-6xl flex flex-col items-start mb-6 mt-4">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-brand-plum mb-2 drop-shadow-lg">Browse Skills</h1>
+        <p className="text-base md:text-lg text-brand-orchid">Find people with the skills you want to learn</p>
       </div>
 
       {/* Search and Filters */}
-      <div className="w-full max-w-6xl mb-10 bg-white rounded-3xl shadow-card-lg border border-brand-plum/30 p-8 flex flex-col gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-        <div className="flex flex-col lg:flex-row gap-4">
+      <div className="w-full max-w-6xl mb-8 bg-white rounded-2xl shadow-card-lg border border-brand-plum/30 p-4 md:p-8 flex flex-col gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-brand-mauve w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search for skills (e.g., Photoshop, JavaScript, Guitar)"
+                placeholder="Search skills..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-10 py-3 rounded-lg border border-brand-plum focus:ring-2 focus:ring-brand-orchid outline-none bg-white text-brand-plum placeholder-brand-mauve shadow"
@@ -159,20 +159,22 @@ const Browse = () => {
               />
             </div>
           </div>
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2 px-5 py-3 rounded-full bg-brand-mauve text-white font-semibold shadow-card hover:bg-brand-orchid transition-colors lg:w-auto"
-          >
-            <Filter className="w-4 h-4 mr-2" />
-            Filters
-          </button>
-          <button
-            onClick={handleSearch}
-            className="flex items-center gap-2 px-5 py-3 rounded-full bg-brand-plum text-white font-semibold shadow-card hover:bg-brand-mauve transition-colors lg:w-auto"
-          >
-            <Search className="w-4 h-4 mr-2" />
-            Search
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-brand-mauve text-white font-semibold shadow-card hover:bg-brand-orchid transition-colors"
+            >
+              <Filter className="w-4 h-4" />
+              <span>Filters</span>
+            </button>
+            <button
+              onClick={handleSearch}
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-brand-plum text-white font-semibold shadow-card hover:bg-brand-mauve transition-colors"
+            >
+              <Search className="w-4 h-4" />
+              <span>Search</span>
+            </button>
+          </div>
         </div>
 
         {/* Advanced Filters */}
@@ -237,7 +239,7 @@ const Browse = () => {
           paginatedUsers.map((user, idx) => (
             <div
               key={user._id}
-              className="w-full bg-white rounded-2xl shadow-card-lg border border-brand-orchid p-8 flex flex-row items-center gap-8 hover:shadow-2xl transition-shadow mx-auto relative group hover:scale-[1.02] transition-transform duration-200 animate-slide-up"
+              className="w-full bg-white rounded-2xl shadow-card-lg border border-brand-orchid p-4 md:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-8 hover:shadow-2xl transition-all mx-auto relative group hover:scale-[1.01] duration-200 animate-slide-up"
               style={{ animationDelay: `${0.15 + idx * 0.07}s` }}
             >
               {/* Left: Profile photo */}
@@ -246,10 +248,10 @@ const Browse = () => {
                   <img
                     src={user.profilePhoto}
                     alt={user.name}
-                    className="w-28 h-28 rounded-full object-cover border-4 border-brand-plum shadow-lg"
+                    className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-4 border-brand-plum shadow-lg"
                   />
                 ) : (
-                  <div className="w-28 h-28 bg-brand-plum rounded-full flex items-center justify-center text-5xl text-white font-bold shadow-lg border-4 border-brand-plum">
+                  <div className="w-20 h-20 md:w-28 md:h-28 bg-brand-plum rounded-full flex items-center justify-center text-4xl md:text-5xl text-white font-bold shadow-lg border-4 border-brand-plum">
                     {user.name.charAt(0).toUpperCase()}
                   </div>
                 )}
