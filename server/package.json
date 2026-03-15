@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "echo \"No build step for server\""
+    "build": "echo \"No build step for server\"",
+    "vercel-start": "node index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
