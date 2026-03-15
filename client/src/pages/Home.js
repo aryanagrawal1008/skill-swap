@@ -56,17 +56,7 @@ const Hill = () => (
   </svg>
 );
 
-// SVG Constellation
-const Constellation = () => (
-  <svg width="340" height="180" viewBox="0 0 340 180" fill="none" style={{margin:'0 auto',display:'block'}}>
-    <circle cx="30" cy="120" r="4" fill="#D391B0" />
-    <circle cx="90" cy="60" r="4" fill="#BA6E8F" />
-    <circle cx="170" cy="90" r="4" fill="#9F6496" />
-    <circle cx="250" cy="40" r="4" fill="#7B466A" />
-    <circle cx="310" cy="100" r="4" fill="#5D3C64" />
-    <polyline points="30,120 90,60 170,90 250,40 310,100" stroke="#fff" strokeWidth="2" fill="none" />
-  </svg>
-);
+
 
 // Animated floating constellation for hero
 const FloatingConstellation = () => (

@@ -8,24 +8,28 @@ A modern web application that enables users to exchange skills with each other. 
 ## Features
 
 ### User Management
+
 - **User Registration & Authentication**: Secure JWT-based authentication
 - **Profile Management**: Users can create and edit their profiles
 - **Profile Photos**: Optional profile photo uploads
 - **Privacy Settings**: Users can make their profiles public or private
 
 ### Skill Management
+
 - **Skills Offered**: Users can list skills they can teach
 - **Skills Wanted**: Users can list skills they want to learn
 - **Skill Details**: Each skill includes description and proficiency/priority levels
 - **Availability**: Users can specify when they're available (weekdays, weekends, evenings, mornings)
 
 ### Search & Discovery
+
 - **Browse Users**: View all public profiles
 - **Skill Search**: Search users by specific skills
 - **Location Filtering**: Filter users by location
 - **Availability Filtering**: Filter by availability preferences
 
 ### Swap Management
+
 - **Request Swaps**: Send skill exchange requests to other users
 - **Accept/Reject**: Recipients can accept or reject swap requests
 - **Cancel Requests**: Requesters can cancel pending requests
@@ -33,6 +37,7 @@ A modern web application that enables users to exchange skills with each other. 
 - **Swap History**: View all past and current swaps
 
 ### Rating System
+
 - **Post-Swap Ratings**: Rate completed swaps (1-5 stars)
 - **Comments**: Add feedback comments to ratings
 - **User Ratings**: Build reputation through ratings
@@ -41,6 +46,7 @@ A modern web application that enables users to exchange skills with each other. 
 ## Tech Stack
 
 ### Backend
+
 - **Node.js** with Express.js
 - **MongoDB** with Mongoose ODM
 - **JWT** for authentication
@@ -51,6 +57,7 @@ A modern web application that enables users to exchange skills with each other. 
 - **express-rate-limit** for rate limiting
 
 ### Frontend
+
 - **React.js** with functional components and hooks
 - **React Router** for navigation
 - **Axios** for API calls
@@ -82,6 +89,7 @@ skillswap/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - MongoDB (local or cloud instance)
 - npm or yarn
@@ -89,12 +97,14 @@ skillswap/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd skillswap
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Install root dependencies
    npm install
@@ -111,12 +121,14 @@ skillswap/
 3. **Environment Setup**
 
    Copy the template file and customize it with your settings:
+
    ```bash
    cd server
    cp .env-template .env
    ```
 
    Then edit the `.env` file with your MongoDB Atlas connection string:
+
    ```env
    MONGODB_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/skillswap?retryWrites=true&w=majority
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
@@ -131,6 +143,7 @@ skillswap/
 5. **Run the application**
 
    From the root directory:
+
    ```bash
    # Start both frontend and backend
    npm run dev
@@ -151,11 +164,13 @@ skillswap/
 ## API Endpoints
 
 ### Authentication
+
 - `POST /api/auth/register` - Register a new user
 - `POST /api/auth/login` - Login user
 - `GET /api/auth/me` - Get current user
 
 ### Users
+
 - `GET /api/users/browse` - Browse public users
 - `GET /api/users/search` - Search users by skills
 - `GET /api/users/:id` - Get user profile
@@ -167,6 +182,7 @@ skillswap/
 - `DELETE /api/users/skills-wanted/:id` - Remove skill wanted
 
 ### Swaps
+
 - `POST /api/swaps` - Create swap request
 - `GET /api/swaps/my-swaps` - Get user's swaps
 - `GET /api/swaps/:id` - Get swap details
@@ -177,6 +193,7 @@ skillswap/
 - `POST /api/swaps/:id/rate` - Rate completed swap
 
 ### Skills
+
 - `GET /api/skills/popular` - Get popular skills
 - `GET /api/skills/suggestions` - Get skill suggestions
 

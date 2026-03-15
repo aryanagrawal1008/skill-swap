@@ -1,0 +1,35 @@
+
+> skill-swap-client@1.0.0 build
+> react-scripts build
+
+(node:34984) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Creating an optimized production build...
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+Treating warnings as errors because process.env.CI = true.
+Most CI servers set it automatically.
+
+Failed to compile.
+
+[eslint] 
+src\components\Navbar.js
+  Line 8:20:  'setDarkMode' is assigned a value but never used  no-unused-vars
+
+src\pages\Home.js
+  Line 60:7:  'Constellation' is assigned a value but never used  no-unused-vars
+
+src\pages\Profile.js
+  Line 3:8:    'axios' is defined but never used                      no-unused-vars
+  Line 5:16:   'X' is defined but never used                          no-unused-vars
+  Line 5:27:   'Clock' is defined but never used                      no-unused-vars
+  Line 5:40:   'User' is defined but never used                       no-unused-vars
+  Line 28:10:  'profilePhotoFile' is assigned a value but never used  no-unused-vars
+  Line 62:9:   'handleSave' is assigned a value but never used        no-unused-vars
+
+

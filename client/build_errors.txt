@@ -1,0 +1,23 @@
+
+> skill-swap-client@1.0.0 build
+> react-scripts build
+
+(node:30172) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Creating an optimized production build...
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Failed to compile.
+
+[eslint] 
+src\components\Navbar.js
+  Line 28:5:  'logout' is not defined    no-undef
+  Line 29:5:  'navigate' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+
+

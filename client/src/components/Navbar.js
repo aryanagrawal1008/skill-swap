@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 const Navbar = () => {
   const { isAuthenticated, user } = useAuth();
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,10 +24,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLogout = () => {
-    logout();
-    navigate('/');
-  };
+
 
   // Determine if current page is home
   const isHome = location.pathname === '/';

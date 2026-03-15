@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
 import toast from 'react-hot-toast';
-import { Edit, X, MapPin, Clock, Star, User, LogOut, Camera } from 'lucide-react';
+import { Edit, MapPin, Star, LogOut, Camera } from 'lucide-react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import api from '../config/api';
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +24,7 @@ const Profile = () => {
       customSchedule: ''
     }
   });
-  const [profilePhotoFile, setProfilePhotoFile] = useState(null);
+
   const [photoUploading, setPhotoUploading] = useState(false);
   const [newSkillOffered, setNewSkillOffered] = useState({ name: '', description: '', proficiency: 'Intermediate' });
   const [newSkillWanted, setNewSkillWanted] = useState({ name: '', description: '', priority: 'Medium' });
@@ -59,26 +58,7 @@ const Profile = () => {
     return () => window.removeEventListener('refresh-users', handler);
   }, [user, updateUser]);
 
-  const handleSave = async () => {
-    try {
-      setLoading(true);
-      const response = await api.put('/users/profile', {
-        name: profileData.name,
-        location: profileData.location,
-        bio: profileData.bio,
-        isPublic: profileData.isPublic,
-        availability: profileData.availability
-      });
-      updateUser(response.data);
-      setEditing(false);
-      toast.success('Profile updated successfully!');
-    } catch (error) {
-      console.error('Error updating profile:', error);
-      toast.error('Failed to update profile');
-    } finally {
-      setLoading(false);
-    }
-  };
+
 
   const handleAddSkillOffered = async () => {
     try {
@@ -162,7 +142,6 @@ const Profile = () => {
       });
       updateUser(response.data.user);
       toast.success('Profile photo updated!');
-      setProfilePhotoFile(null);
     } catch (error) {
       toast.error('Failed to upload photo');
     } finally {
