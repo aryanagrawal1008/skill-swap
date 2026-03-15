@@ -12,7 +12,13 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/client/$1"
+      "dest": "/client/build/$1"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/client/build/index.html"
     }
   ]
 }
