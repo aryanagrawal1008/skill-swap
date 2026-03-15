@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
+import api from '../config/api';
 import toast from 'react-hot-toast';
 import { 
   MapPin, 
@@ -41,7 +41,7 @@ const UserProfile = () => {
   const fetchUser = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`/api/users/${id}`);
+      const response = await api.get(`/users/${id}`);
       setUser(response.data);
     } catch (error) {
       console.error('Error fetching user:', error);
@@ -60,7 +60,7 @@ const UserProfile = () => {
         limit: reviewsPerPage,
         sort: reviewSort
       });
-      const response = await axios.get(`/api/users/${id}/reviews?${params}`);
+      const response = await api.get(`/users/${id}/reviews?${params}`);
       setAllReviews(response.data.reviews);
       setReviewsPagination(response.data.pagination);
     } catch (error) {
@@ -114,7 +114,7 @@ const UserProfile = () => {
 
   const handleSwapRequest = async () => {
     try {
-      await axios.post('/api/swaps', {
+      await api.post('/swaps', {
         recipientId: user._id,
         ...swapData
       });
